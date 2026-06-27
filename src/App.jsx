@@ -1,7 +1,7 @@
+import Welcome from "./pages/Welcome";
+
 function App() {
-  return (
-    <h1>PopX Assessment</h1>
-  );
+  return <Welcome />;
 }
 
 export default App;
