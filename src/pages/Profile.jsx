@@ -1,7 +1,7 @@
 import "./Profile.css";
 
 function Profile() {
-  const user = JSON.parse(localStorage.getItem("userData"));
+  const user = JSON.parse(localStorage.getItem("userData")) || {};
 
   return (
     <div className="profile-container">

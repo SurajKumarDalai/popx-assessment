@@ -5,6 +5,15 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
+  font-family: "Inter", Arial, sans-serif;
+  background: #f7f8f9;
+  color: #1d1d1d;
+}
+
+button {
+  font-family: inherit;
+}
+
+input {
+  font-family: inherit;
 }

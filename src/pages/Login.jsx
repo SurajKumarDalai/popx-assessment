@@ -10,16 +10,25 @@ function Login() {
   const [error, setError] = useState("");
 
   const handleLogin = () => {
+    // Validate empty fields
+    if (!email || !password) {
+      setError("Please enter both email and password.");
+      return;
+    }
+
+    // Get stored user data
     const user = JSON.parse(localStorage.getItem("userData"));
 
+    // Validate credentials
     if (
       user &&
       user.email === email &&
       user.password === password
     ) {
+      setError("");
       navigate("/profile");
     } else {
-      setError("Invalid email or password");
+      setError("Invalid email or password.");
     }
   };
 
@@ -41,9 +50,12 @@ function Login() {
 
         <input
           type="email"
-          placeholder="Enter email"
+          placeholder="Enter your email"
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => {
+            setEmail(e.target.value);
+            setError("");
+          }}
         />
       </div>
 
@@ -52,9 +64,12 @@ function Login() {
 
         <input
           type="password"
-          placeholder="Enter password"
+          placeholder="Enter your password"
           value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={(e) => {
+            setPassword(e.target.value);
+            setError("");
+          }}
         />
       </div>
 

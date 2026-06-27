@@ -24,6 +24,16 @@ function Signup() {
   };
 
   const handleSubmit = () => {
+    if (
+      !formData.fullName ||
+      !formData.phone ||
+      !formData.email ||
+      !formData.password
+    ) {
+      alert("Please fill all required fields.");
+      return;
+    }
+
     localStorage.setItem("userData", JSON.stringify(formData));
     navigate("/profile");
   };
@@ -43,7 +53,7 @@ function Signup() {
         <input
           type="text"
           name="fullName"
-          placeholder="Marry Doe"
+          placeholder="Enter your full name"
           value={formData.fullName}
           onChange={handleChange}
         />
@@ -57,7 +67,7 @@ function Signup() {
         <input
           type="text"
           name="phone"
-          placeholder="Marry Doe"
+          placeholder="Enter your phone number"
           value={formData.phone}
           onChange={handleChange}
         />
@@ -71,7 +81,7 @@ function Signup() {
         <input
           type="email"
           name="email"
-          placeholder="Marry Doe"
+          placeholder="Enter your email"
           value={formData.email}
           onChange={handleChange}
         />
@@ -85,7 +95,7 @@ function Signup() {
         <input
           type="password"
           name="password"
-          placeholder="Marry Doe"
+          placeholder="Enter your password"
           value={formData.password}
           onChange={handleChange}
         />
@@ -97,7 +107,7 @@ function Signup() {
         <input
           type="text"
           name="company"
-          placeholder="Marry Doe"
+          placeholder="Enter your company name"
           value={formData.company}
           onChange={handleChange}
         />
